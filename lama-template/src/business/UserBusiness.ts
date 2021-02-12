@@ -18,9 +18,13 @@ export class UserBusiness {
 
       const id = this.idGenerator.generate();
 
+      if(!user.email || !user.name || !user.password){
+         throw new CustomError(422, 'Missing input')
+      }
+
       const hashPassword = await this.hashManager.hash(user.password);
 
-      await this.userDatabase.createUser(
+     await this.userDatabase.createUser(
          id,
          user.email,
          user.name,
