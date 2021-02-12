@@ -1,5 +1,5 @@
 import { ShowDatabase } from "../data/ShowDatabase";
-import { Show, ShowInputDTO } from "../../../lama-template/src/business/entities/Show";
+import { Show, ShowInputDTO, WeekDay } from "../../../lama-template/src/business/entities/Show";
 import { UserRole } from "./entities/User";
 import { CustomError } from "./error/CustomError";
 import { Authenticator } from "./services/Authenticator";
@@ -67,5 +67,15 @@ export class ShowBusiness {
             id: this.idGenerator.generate()
         })
     )
+  }
+
+  async getShowByDay(week_day: WeekDay){
+      if(!week_day){
+          throw new CustomError(401, "Invalid input to getShowByDay");
+      }
+
+      const shows = await this.showDatabase.getShowByDay(week_day)
+
+      return { result: shows}
   }
 }

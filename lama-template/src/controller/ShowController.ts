@@ -39,4 +39,25 @@ export class ShowController {
     }
 
   }
+
+  async getShowByDay(req: Request, res: Response){
+    try {
+
+      const weekDay = Show.toWeekDayEnum(req.query.week_day as string)
+
+      const showBusiness = new ShowBusiness(
+          new ShowDatabase(),
+          new BandDatabase(),
+          new IdGenerator(),
+          new Authenticator()
+        );
+
+      const shows = await showBusiness.getShowByDay(weekDay)
+
+      res.status(200).send({shows})
+
+    } catch (error) {
+      res.status(error.statusCode || 400).send(error.message);
+    }
+  }
 }

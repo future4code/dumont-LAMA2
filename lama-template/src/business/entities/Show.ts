@@ -48,10 +48,7 @@ export interface ShowInputDTO {
   band_id: string;
 }
 
-// export interface ShowOutputDTO {
-//   id: string
-//   week_day: WeekDay;
-//   start_time: number;
-//   end_time: number;
-//   band_id: string;
-// }
+export interface ShowOutputDTO {
+  name: string;
+  music_genre: string;
+}
