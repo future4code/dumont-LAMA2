@@ -9,7 +9,8 @@ export class User {
       public readonly role: UserRole
    ) { }
 
-
+   
+   
    static stringToUserRole(input: string): UserRole {
       switch (input) {
          case "NORMAL":
@@ -20,7 +21,19 @@ export class User {
             throw new CustomError(422,"Invalid user role");
       }
    }
+   
+   static toUserModel(user:any): User {
+      return new User(
+         user.id,
+         user.name,
+         user.email,
+         user.password,
+         User.stringToUserRole(user.role)
+      )
+   }
 }
+
+
 
 export interface UserInputDTO {
    email: string;

@@ -34,7 +34,7 @@ export class BandBusiness {
         }
     }
 
-    public async getBandById(id: string){
+    public async getBandByIdOrName(id: string){
             const bandResult = await this.bandDatabase.getBandById(id)
 
             if(!bandResult){

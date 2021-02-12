@@ -48,7 +48,7 @@ export class UserBusiness {
          user.password,
          userFromDB.password
       );
-
+      
       const accessToken = this.authenticator.generateToken({
          id: userFromDB.id,
          role: userFromDB.role
