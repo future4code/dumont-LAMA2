@@ -1,6 +1,6 @@
 import { Show, ShowOutputDTO, WeekDay } from "../business/entities/Show";
 import { CustomError } from "../business/error/CustomError";
-import { BaseDatabase } from "./BaseDatabase";
+import { BaseDatabase } from "../data/BaseDatabase";
 
 export class ShowDatabase extends BaseDatabase {
   private static TABLE_NAME = "lama_show";

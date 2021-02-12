@@ -1,9 +1,10 @@
 import { ShowDatabase } from "../data/ShowDatabase";
-import { ShowInputDTO } from "./entities/Show";
+import { ShowInputDTO } from "../../../lama-template/src/business/entities/Show";
 import { UserRole } from "./entities/User";
 import { CustomError } from "./error/CustomError";
 import { Authenticator } from "./services/Authenticator";
 import { IdGenerator } from "./services/IdGenerator";
+import { BandDatabase } from "../data/BandDatabase";
 
 export class ShowBusiness{
     constructor(
