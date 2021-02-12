@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { BandInputDTO } from "../business/entities/Band";
+import { Band, BandInputDTO } from "../business/entities/Band";
 import { CustomError } from "../business/error/CustomError";
 import { Authenticator } from "../business/services/Authenticator";
 import { BandBusiness } from "../business/BandBusiness";
@@ -43,9 +43,9 @@ export class BandController {
 
     public async getBandById(req: Request, res: Response) {
         try{
-        const {id} = req.params
+        const bandInfo = req.params.id || req.params.name
 
-        const band = await bandBusiness.getBandById(id)
+        const band: Band = await bandBusiness.getBandById(bandInfo)
 
         res.status(200).send(band)
         
