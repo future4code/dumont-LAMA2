@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { BandDatabase } from "../../data/BandDatabase";
-import { BandInputDTO } from "../entities/Band";
-import { UserRole } from "../entities/User";
-import { CustomError } from "../error/CustomError";
-import { Authenticator } from "./Authenticator";
-import { IdGenerator } from "./IdGenerator";
+import { BandDatabase } from "../data/BandDatabase";
+import { BandInputDTO } from "./entities/Band";
+import { UserRole } from "./entities/User";
+import { CustomError } from "./error/CustomError";
+import { Authenticator } from "./services/Authenticator";
+import { IdGenerator } from "./services/IdGenerator";
 
 export class BandBusiness {
     constructor (

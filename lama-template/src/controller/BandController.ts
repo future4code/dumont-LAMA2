@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { BandInputDTO } from "../business/entities/Band";
 import { CustomError } from "../business/error/CustomError";
 import { Authenticator } from "../business/services/Authenticator";
-import { BandBusiness } from "../business/services/BandBusiness";
+import { BandBusiness } from "../business/BandBusiness";
 import { IdGenerator } from "../business/services/IdGenerator";
 import { BandDatabase } from "../data/BandDatabase";
 
