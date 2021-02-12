@@ -40,4 +40,17 @@ export class BandController {
             res.status(error.statusCode || 400).send(error.message)
         }
     }
+
+    public async getBandById(req: Request, res: Response) {
+        try{
+        const {id} = req.params
+
+        const band = await bandBusiness.getBandById(id)
+
+        res.status(200).send(band)
+        
+    } catch(error){
+        res.status(error.statusCode || 400).send(error.message)
+    }
+}
 }

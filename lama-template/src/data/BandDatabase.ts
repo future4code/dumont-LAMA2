@@ -34,4 +34,20 @@ export class BandDatabase extends BaseDatabase {
     } 
 
     }
+
+    public async getBandById(id: string):Promise<any>{
+        try {
+           const result = await BandDatabase.connection
+            .select(
+                "*"
+            )
+            .from(BandDatabase.TABLE_NAME)
+            .where({id})
+
+            return result[0]
+
+        } catch(error){
+            throw new CustomError(500, "An unexpected error ocurred");
+        }
+    }
 }

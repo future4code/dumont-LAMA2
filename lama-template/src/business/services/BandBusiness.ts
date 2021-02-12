@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { BandDatabase } from "../../data/BandDatabase";
 import { BandInputDTO } from "../entities/Band";
 import { UserRole } from "../entities/User";
@@ -31,5 +32,24 @@ export class BandBusiness {
         if(!band.music_genre || !band.name || !band.responsible){
             throw new CustomError(400, 'Missing informations.')
         }
+    }
+
+    public async getBandById(id: string){
+            const bandResult = await this.bandDatabase.getBandById(id)
+
+            if(!bandResult){
+                throw new CustomError(404, "Band not found")
+            }
+
+            const band = {
+                id: bandResult.id,
+                name: bandResult.name,
+                music_genre: bandResult.music_genre,
+                responsible: bandResult.responsible
+            }
+
+            const result = (band)
+
+            return result
     }
 }
