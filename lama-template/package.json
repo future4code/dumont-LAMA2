@@ -4,6 +4,7 @@
    "main": "index.js",
    "scripts": {
       "start": "tsc && node ./build/src/index.js",
+      "dev": "clear && ts-node-dev ./src/index.ts",
       "test": "jest"
    },
    "author": "Labenu_",
@@ -12,11 +13,12 @@
       "bcryptjs": "^2.4.3",
       "dotenv": "^8.2.0",
       "express": "^4.17.1",
-      "jsonwebtoken": "^8.5.1",
       "jest": "^26.0.1",
+      "jsonwebtoken": "^8.5.1",
       "knex": "^0.21.2",
       "moment": "^2.27.0",
       "mysql": "^2.18.1",
+      "ts-node-dev": "^1.1.1",
       "uuid": "^8.2.0"
    },
    "devDependencies": {
