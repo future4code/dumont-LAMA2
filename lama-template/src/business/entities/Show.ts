@@ -42,16 +42,16 @@ export enum WeekDay {
 }
 
 export interface ShowInputDTO {
-  week_day: string;
+  week_day: WeekDay;
   start_time: number;
   end_time: number;
   band_id: string;
 }
 
-export interface ShowOutputDTO {
-  id: string
-  week_day: string;
-  start_time: number;
-  end_time: number;
-  band_id: string;
-}
+// export interface ShowOutputDTO {
+//   id: string
+//   week_day: WeekDay;
+//   start_time: number;
+//   end_time: number;
+//   band_id: string;
+// }
